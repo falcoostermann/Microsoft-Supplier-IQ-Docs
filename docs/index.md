@@ -23,7 +23,7 @@ classes:
   <h2>One shared picture of every supplier</h2>
   <p class="siq-section__intro">Watch the 90-second overview to see how Supplier IQ connects procurement context, communication, intelligence, and action.</p>
   <div class="siq-video">
-    <video controls preload="metadata" poster="assets/images/supplier-iq-hero-background.jpg">
+    <video controls preload="metadata" poster="assets/images/supplier-iq-video-thumbnail.jpg">
       <source src="assets/videos/Microsoft-Supplier-IQ-Overview.mp4" type="video/mp4">
       Your browser does not support embedded video.
     </video>
