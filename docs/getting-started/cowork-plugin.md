@@ -62,7 +62,7 @@ Start with a non-production environment and safe test records.
 
 1. [Download `MicrosoftSupplierIQ_Cowork_1_1_0.zip`](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip).
 2. In the Cowork customization or plugin experience, upload the package using the supported custom plugin upload process.
-3. If direct upload is unavailable, follow your tenant's Microsoft 365 app approval and publication process.
+3. For a centrally managed rollout, open **Microsoft 365 admin center > Copilot > Agents > All agents > Upload custom agent**, upload the ZIP and assign it to **Entire organization** or **Specific users/groups**. [Microsoft guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/m365-agents-admin-guide)
 4. Enable the Supplier IQ plugin and the existing Microsoft data connection.
 5. Sign in to the Microsoft connection and select the intended Dataverse environment on that connection.
 6. Verify that all four Supplier IQ skills are visible.
