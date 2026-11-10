@@ -2,6 +2,8 @@
 
 The optional Supplier IQ Cowork plugin brings supplier analysis and controlled Dataverse updates into Microsoft Copilot Cowork. It is distributed separately from the Power Platform solution and uses the user's existing Microsoft data connection and permissions.
 
+**Version 1.1.0 supports both reading and writing. Every write requires a concrete preview and your explicit confirmation.** No separate plugin setting is needed to enable the supported write workflows; the Microsoft connection must expose the operation and your account must have the necessary permissions.
+
 ![Supplier IQ Cowork plugin version 1.1.0](../assets/screenshots/cowork-plugin.png)
 
 | Property | Value |
@@ -9,8 +11,8 @@ The optional Supplier IQ Cowork plugin brings supplier analysis and controlled D
 | Current version | `1.1.0` |
 | Package | [Download the Cowork plugin](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip) |
 | Included skills | 4 |
-| Default behavior | Read-only analysis |
-| Writes | Previewed and explicitly confirmed only |
+| Supported operations | Reading and writing, within existing connection capabilities and permissions |
+| Write approval | Every write requires a preview and explicit user confirmation |
 
 ## Included skills
 
@@ -81,9 +83,9 @@ Start with a non-production environment and safe test records.
 
 Replace the example supplier with an Account that the signed-in user is authorized to access.
 
-## Read-only by default
+## Reading and writing with explicit confirmation
 
-Analysis does not authorize a write. Before an eligible Dataverse change, the plugin must present a concrete preview with the target environment, record, relationships, fields and values. The user must explicitly confirm that specific preview.
+The plugin is not limited to reading. You can request the supported Dataverse changes below without switching the plugin out of a read-only mode. An analysis request alone does not change records: before a write, the plugin must present a concrete preview with the target environment, record, relationships, fields and values. The user must explicitly confirm that specific preview.
 
 Depending on the tools available in the tenant, eligible confirmed writes can include:
 
