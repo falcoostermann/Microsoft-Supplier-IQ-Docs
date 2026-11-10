@@ -1,5 +1,7 @@
 # Microsoft Supplier IQ documentation
 
+> **Public documentation website:** [Open Microsoft Supplier IQ documentation](https://falcoostermann.github.io/Microsoft-Supplier-IQ-Docs/)
+
 <p align="center">
   <img src="docs/assets/images/microsoft-supplier-iq-logo.png" alt="Microsoft Supplier IQ" width="180">
 </p>

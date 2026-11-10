@@ -1,0 +1,70 @@
+site_name: Microsoft Supplier IQ
+site_description: Product, deployment, configuration, and architecture guidance for Microsoft Supplier IQ.
+site_url: https://falcoostermann.github.io/Microsoft-Supplier-IQ-Docs/
+
+docs_dir: docs
+site_dir: site
+
+hooks:
+  - hooks.py
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/images/microsoft-supplier-iq-logo.png
+  favicon: assets/images/microsoft-supplier-iq-logo.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Overview: index.md
+  - Get started:
+      - Prerequisites: getting-started/prerequisites.md
+      - Installation: getting-started/installation.md
+      - Cowork plugin: getting-started/cowork-plugin.md
+  - Configuration:
+      - Supplier Accounts: configuration/supplier-accounts.md
+      - Prompt Catalog: configuration/prompts.md
+      - Security: configuration/security.md
+  - Architecture:
+      - Solution overview: architecture/overview.md
+      - Data model: architecture/data-model.md
+      - Automation: architecture/automation.md
+  - Downloads: downloads.md
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs
+      name: Microsoft Supplier IQ on GitHub
+
+copyright: Microsoft Supplier IQ documentation
