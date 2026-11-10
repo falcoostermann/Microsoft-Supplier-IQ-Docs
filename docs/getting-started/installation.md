@@ -1,40 +1,12 @@
 # Installation
 
-Install Supplier IQ in four stages: import, connect, configure, validate.
-
-<div class="siq-summary-grid" markdown>
-
-<div class="siq-summary-card" markdown>
-<span class="siq-summary-card__number">1</span>
-### Import
-Download and import the solution.
-</div>
-
-<div class="siq-summary-card" markdown>
-<span class="siq-summary-card__number">2</span>
-### Connect
-Map Dataverse and Microsoft 365 connections.
-</div>
-
-<div class="siq-summary-card" markdown>
-<span class="siq-summary-card__number">3</span>
-### Configure
-Set suppliers, prompts, links, and security.
-</div>
-
-<div class="siq-summary-card" markdown>
-<span class="siq-summary-card__number">4</span>
-### Validate
-Run the end-to-end smoke test.
-</div>
-
-</div>
+Use this guide after the [pilot platform and user group are ready](prerequisites.md).
 
 ## 1. Import
 
 [Download Supplier IQ 1.0.1.0](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip){ .siq-button }
 
-In Power Apps, open **Solutions**, select **Import solution**, upload the ZIP, map the connections, and publish.
+In Power Apps, open **Solutions**, select **Import solution**, upload the ZIP, complete the import, and publish.
 
 !!! note "Pilot package"
     The download is unmanaged. Use a managed solution and controlled pipeline for production.
@@ -48,7 +20,7 @@ pac solution import `
   --publish-changes
 ```
 
-## 2. Connect
+## 2. Map connections
 
 | Connection | Connector |
 |---|---|
@@ -58,7 +30,7 @@ pac solution import `
 | `siq_Teams` | Microsoft Teams |
 | `siq_SharePoint` | SharePoint |
 
-Review environment-specific URLs, SharePoint locations, Copilot Agent IDs, and AI Builder prompt references. Use environment variables for production ALM.
+Then review environment-specific URLs, SharePoint locations, Copilot Agent IDs, and AI Builder prompt references. Use environment variables for production ALM.
 
 ## 3. Configure
 

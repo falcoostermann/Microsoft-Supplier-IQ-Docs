@@ -26,7 +26,7 @@ theme:
 nav:
   - Overview: index.md
   - Get started:
-      - Prerequisites: getting-started/prerequisites.md
+      - Plan a pilot: getting-started/prerequisites.md
       - Installation: getting-started/installation.md
       - Cowork plugin: getting-started/cowork-plugin.md
   - Configuration:

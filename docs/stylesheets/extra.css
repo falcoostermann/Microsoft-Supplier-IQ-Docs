@@ -132,6 +132,12 @@ pre {
   margin-top: 2rem;
 }
 
+.md-main__inner:not(:has(.siq-hero)) {
+  width: min(calc(100% - clamp(2rem, 8vw, 8rem)), 90rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .md-content {
   min-width: 0;
   background: var(--cp-surface);
@@ -670,6 +676,10 @@ pre {
 @media screen and (max-width: 60rem) {
   .md-main__inner {
     margin-top: 1rem;
+  }
+
+  .md-main__inner:not(:has(.siq-hero)) {
+    width: calc(100% - 2rem);
   }
 
   .md-content__inner {
