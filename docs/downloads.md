@@ -23,17 +23,11 @@
 
 The workbook contains localized Prompt Catalog sample rows for native Dataverse Excel import. Review Agent IDs and prompt content before importing into a customer environment.
 
-## Supplier IQ Cowork plugin 1.1.0
+## Microsoft Copilot Cowork plugin
 
 [Download the Cowork plugin ZIP](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip) | [Release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/cowork-v1.1.0) | [Installation and usage](getting-started/cowork-plugin.md)
 
-The separate Microsoft 365 app package contains four skills and the Supplier IQ logo:
-
-- Supplier briefing, negotiation preparation and supplier risk review.
-- An Inbox Email Tracker that first confirms the timeframe, proposes relevant supplier emails not already tracked in Dynamics, and copies only a specifically confirmed selection with supported attachments.
-- Confirmed task, soft-fact and comment creation, task updates, and explicit supplier master/KPI field updates.
-
-The plugin reuses existing Microsoft Dataverse and Work IQ capabilities. Environment selection stays on the Microsoft connection. It does not send email or install a new MCP server.
+The separate Microsoft 365 app package contains four skills: supplier briefing, negotiation preparation, supplier risk review and Inbox Email Tracker. It uses the signed-in user's existing Microsoft connection and permissions. Analysis is read-only by default, while eligible writes require a concrete preview and explicit user confirmation.
 
 > **Important**
 >

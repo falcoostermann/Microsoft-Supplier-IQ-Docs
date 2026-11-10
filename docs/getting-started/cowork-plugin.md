@@ -1,86 +1,137 @@
 # Supplier IQ for Microsoft Copilot Cowork
 
-[Download version 1.1.0](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip) | [Release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/cowork-v1.1.0) | [SHA-256 checksum](../downloads.md#integrity)
+The optional Supplier IQ Cowork plugin brings supplier analysis and controlled Dataverse updates into Microsoft Copilot Cowork. It is distributed separately from the Power Platform solution and uses the user's existing Microsoft data connection and permissions.
 
-The Supplier IQ Cowork plugin is a separate Microsoft 365 app package containing the Supplier IQ logo and four skills:
+![Supplier IQ Cowork plugin version 1.1.0](../assets/screenshots/cowork-plugin.png)
+
+| Property | Value |
+|---|---|
+| Current version | `1.1.0` |
+| Package | [Download the Cowork plugin](../downloads/MicrosoftSupplierIQ_Cowork_1_1_0.zip) |
+| Included skills | 4 |
+| Default behavior | Read-only analysis |
+| Writes | Previewed and explicitly confirmed only |
+
+## Included skills
 
 | Skill | Purpose |
 |---|---|
-| Supplier briefing | Sourced supplier overview, performance, relationships and open commitments |
-| Negotiation preparation | Evidence-based negotiation brief and proposed discussion plan |
-| Supplier risk review | Risk evidence, uncertainty and mitigation proposals |
-| Inbox Email Tracker | Review the caller's Inbox and propose supplier emails for confirmed copying into Dynamics |
+| `supplier-briefing` | Builds a sourced overview of performance, risks, relationships and outstanding commitments |
+| `negotiation-preparation` | Prepares an evidence-based negotiation brief, discussion plan and proposed trade-offs |
+| `supplier-risk-review` | Reviews sourced risk evidence, uncertainties, contradictions and mitigation options |
+| `email-tracker` | Reviews a selected Inbox period and proposes relevant, not-yet-tracked supplier emails for a confirmed one-time copy to Dataverse |
 
-Analysis is read-only by default. The skills can perform only the specifically previewed and explicitly confirmed operations described below. They never send email, modify Outlook folders/categories/read status, delete records or directly invoke flows.
+The skills respond in the user's language. They combine accessible Supplier IQ Dataverse records, applicable Prompt Catalog content and relevant Microsoft 365 context made available through Work IQ.
+
+## How it works
+
+```text
+Supplier IQ Cowork plugin
+  -> Existing Microsoft Dataverse/Dynamics or Business Applications connection
+     -> Selected environment -> Supplier IQ and Prompt Catalog data
+  -> Authorized Work IQ capabilities
+     -> Relevant email, meetings, Teams, documents and people context
+```
+
+The package:
+
+- does not install or host an MCP server;
+- does not register a separate OAuth application;
+- does not store a Dataverse environment URL;
+- does not grant access beyond the signed-in user's existing permissions;
+- does not install Supplier IQ tables, flows or applications.
+
+Environment selection remains on the existing Microsoft connection. The actual read and write tools available to Cowork can vary by tenant, host and connector version. Test custom-table access and supported writes in the target tenant before broad rollout.
 
 ## Prerequisites
 
-- Microsoft Copilot Cowork and tenant permission to install custom plugin/app packages.
-- A Supplier IQ Dataverse environment with the required data, supplier Accounts and optional Prompt Catalog entries.
-- An existing enabled Microsoft Dataverse/Dynamics or Business Applications in Work IQ connection, with Dataverse MCP enabled and the relevant client allowed.
-- Actual session tools for the required table metadata, reads and chosen record-write operations. A connector name or the presence of a generic create tool does not prove email-party, relationship, status or attachment support.
-- Authorized Work IQ/Inbox access, including the requested folder/date filters and pagination. Email copying requires the original Internet Message ID, full permitted content and supported recipient handling. Attachment copying additionally requires an allowed safe binary-transfer path.
-- Appropriate licenses, user permissions, tenant tool controls and information-protection policies.
+Before installing the plugin, confirm that:
 
-This plugin does not create/register an MCP server, application authentication client or new Microsoft 365 data connection. Installing it alone does not grant data access.
+1. The [Microsoft Supplier IQ solution](../downloads/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip) is installed in the target Dataverse environment.
+2. The user can access the required Supplier IQ records and Prompt Catalog rows.
+3. Microsoft Copilot Cowork and custom plugin packages are enabled for the tenant.
+4. An existing Microsoft data connection is available in Cowork and can access the selected Dataverse environment.
+5. The user has permission to the Microsoft 365 sources needed for the requested analysis.
+6. Any intended Dataverse write operations are supported by the connection and permitted by the user's security roles.
 
-## Install or update
+Start with a non-production environment and safe test records.
 
-1. Download the version 1.1.0 ZIP and verify its checksum.
-2. Have the administrator review the app's metadata, required existing connections and security scope.
-3. Use Cowork's custom-plugin upload if enabled, or the tenant's supported Microsoft 365 app-package upload/approval process. **Do not import this ZIP as a Power Apps solution.**
-4. Enable Supplier IQ and the existing Microsoft data connection. Complete the Microsoft connection's normal sign-in/consent process.
-5. Select the intended environment **on that Microsoft connection**. Supplier IQ has no separate environment settings gear. Use the connector's available picker/settings or supported environment-selection interaction.
-6. Confirm that the same Cowork session can access the Supplier IQ custom tables and `siq_prompt`; another enabled plugin does not automatically guarantee shared tool access.
-7. Verify all four skills appear, then test in a nonproduction environment with safe test data before rollout.
+## Install and activate
 
-The package keeps the same app ID as the earlier 1.0.0 plugin and increments its manifest version to 1.1.0. Update the existing app through the supported tenant process rather than treating it as a different plugin.
+1. [Download `MicrosoftSupplierIQ_Cowork_1_1_0.zip`](../downloads/MicrosoftSupplierIQ_Cowork_1_1_0.zip).
+2. In the Cowork customization or plugin experience, upload the package using the supported custom plugin upload process.
+3. If direct upload is unavailable, follow your tenant's Microsoft 365 app approval and publication process.
+4. Enable the Supplier IQ plugin and the existing Microsoft data connection.
+5. Sign in to the Microsoft connection and select the intended Dataverse environment on that connection.
+6. Verify that all four Supplier IQ skills are visible.
+7. Test a read-only supplier briefing before testing the Inbox period question, preview behavior and explicitly confirmed writes.
+
+> **Do not import this package through Power Apps solution import.**
+>
+> The Cowork ZIP is a Microsoft 365 plugin package, not a Dataverse solution ZIP.
+
+## Example requests
+
+- "Prepare a sourced supplier briefing for Contoso covering the last quarter. State the environment, sources and data gaps."
+- "Prepare my negotiation with Contoso about the next contract renewal. Use the relevant agreements and recent conversations, but create proposals only."
+- "Review the evidence for supplier risks for Contoso this month. Separate facts, soft facts, contradictions and open questions."
+- "Analyze my Inbox and suggest supplier-related emails that are not yet tracked in Dynamics. Ask me for the period first."
+- "Show the final preview for the selected messages and attachments. Do not save anything yet."
+- "Propose a supplier task and a soft fact. Show the exact values and ask before writing."
+
+Replace the example supplier with an Account that the signed-in user is authorized to access.
+
+## Read-only by default
+
+Analysis does not authorize a write. Before an eligible Dataverse change, the plugin must present a concrete preview with the target environment, record, relationships, fields and values. The user must explicitly confirm that specific preview.
+
+Depending on the tools available in the tenant, eligible confirmed writes can include:
+
+- supplier tasks;
+- soft facts and comments;
+- selected supplier, task or KPI field updates;
+- incoming email copies and supported attachments.
+
+The plugin revalidates the target and relevant source data before writing and reports the verified result. A changed preview, changed environment or stale source requires a new confirmation.
+
+The plugin never sends email, changes Outlook read state or folders, deletes Dataverse records, schedules meetings, directly runs flows or refreshes Supplier Insight caches.
 
 ## Inbox Email Tracker
 
-Start with: "Analysiere meine Inbox und schlage supplierrelevante E-Mails vor, die noch nicht in Dynamics erfasst sind."
+The Inbox Email Tracker is a guided one-time copy workflow, not continuous synchronization:
 
-The skill:
+1. It asks for and confirms the reporting period, exact boundaries and timezone before reading mailbox items.
+2. It scans the signed-in user's primary Inbox for that period.
+3. It resolves "my suppliers" from active supplier Accounts owned by the current Dataverse user or assigned through Supplier IQ procurement-team membership.
+4. It matches messages using verified contacts, participants, supplier identity and procurement relevance.
+5. It compares the original Outlook Internet Message ID with Dataverse `email.messageid`. Already tracked messages are skipped.
+6. It previews the proposed messages, supplier assignments, content and attachment handling.
+7. It copies only the final selected batch after explicit confirmation and reads back the result.
 
-1. Asks for this week/month, previous week/month, rolling last 7 days or a custom range. It confirms the exact boundaries and timezone before reading mailbox items.
-2. Uses the caller's primary Inbox by default and scopes "my suppliers" to active supplier Accounts owned by the Dataverse user plus Procurement Team Membership assignments. It asks for an explicit alternative if that scope cannot be resolved.
-3. Evaluates verified supplier/contact associations and procurement relevance. A common domain/name alone is not enough.
-4. Checks the original `internetMessageId` against Dynamics `email.messageid` across available email records, not just the selected period or supplier. Already tracked emails are skipped, not relinked. Unknown identity or insufficient duplicate-check coverage blocks copying.
-5. Presents messages, supplier assignments, original-content preview/access, relevance and attachment availability. The user selects/corrects rows and then explicitly confirms the final versioned batch.
-6. Rechecks source content and tracking status, creates the approved incoming emails with supported parties/relationships, copies approved supported attachments, sets the appropriate received state, and reads back the result.
+Missing Internet Message IDs, an incomplete duplicate check or an ambiguous supplier assignment block copying until resolved. If an attachment is protected, unsupported, unavailable or too large, the user must choose whether to copy the email without it or skip the message before confirming.
 
-This is a one-time copy, not continuous Outlook synchronization. Copying private mailbox content to Dynamics may make it visible to others with access to the target record; this is disclosed before confirmation.
+Dataverse visibility can be broader than the user's private mailbox access. Review the final preview accordingly.
 
-### Attachments and failures
+## Limitations
 
-The target must support actual email attachments, not merely generic Dataverse file-column uploads. Protected, inaccessible, oversized or otherwise unsupported attachments are disclosed before approval. The user must explicitly choose email-only copying or skip those messages. Linked/cloud files are not silently downloaded as attachments.
+- Connector and Work IQ capabilities vary by tenant and may not expose every required custom-table or attachment operation.
+- The package cannot grant Dataverse, Outlook, Teams, SharePoint or OneDrive permissions.
+- It does not create a Microsoft connection or select an environment independently.
+- It does not provide background or continuous email synchronization.
+- A proposed change is not proof that the target connector can perform it. Unsupported writes remain proposals.
+- Live target-tenant testing is required; static package validation cannot prove runtime authorization, duplicate prevention or connector interoperability.
 
-Partial copies remain partial: an attachment/completion failure does not authorize recreating the email. Unknown outcomes must be reconciled before retries, and resuming requires a new preview and confirmation. A client duplicate check does not provide atomic exactly-once behavior against concurrent server-side or Outlook tracking.
+## Troubleshooting
 
-## Confirmed business writes
+| Symptom | Recommended action |
+|---|---|
+| Supplier IQ skills are not visible | Confirm that version 1.1.0 was accepted, enabled and approved for the user |
+| No Supplier IQ environment setting is shown | Select the environment on the existing Microsoft data connection |
+| Standard Dataverse tables work, but `siq_*` tables do not | Verify the selected environment, Supplier IQ installation, connector coverage and table/field permissions |
+| Microsoft 365 context is missing | Verify the relevant Cowork/Work IQ capability and the user's source permissions |
+| Inbox results are incomplete | Confirm that the connection supports Inbox folder scope, received-time filtering and pagination |
+| Emails cannot be copied | Verify Internet Message ID access, duplicate-query coverage, email parties, incoming state and attachment support |
+| A write is denied | Keep the result as a proposal and correct the user's role, connection or connector capability; do not bypass the denial |
+| Prompt Catalog content is unavailable | Verify access to enabled `siq_prompt` rows in the selected environment |
 
-The other three skills can propose:
-
-- Creating supplier-related tasks, soft facts and comments.
-- Updating explicitly selected fields/status on existing supplier-related tasks.
-- Updating explicitly selected writable supplier master/KPI fields with verified values, units and evidence.
-
-Each operation requires the target environment and supplier/record ID, exact new values and old -> new values for updates, followed by explicit approval of the concrete selection. Generic permission to "write", a selection alone or an analysis request does not authorize a mutation. Changing content, values, supplier or environment requires fresh approval.
-
-Updates require supported concurrency safeguards. Inferred risk scores do not become stored KPIs. Primary keys, supplier flag, account lifecycle/status, ownership, schema, security, connections, prompt rows and cached insights are outside the allowed supplier master changes.
-
-Source-system permissions and tenant policies, not skill text, enforce access. Validate only the Create/Write and relationship permissions needed for the chosen operations; do not grant deletion, mail sending or mailbox modification for this workflow. Existing server-side automation may react to approved writes even though the plugin does not directly invoke it.
-
-## Prompt Catalog and Work IQ
-
-The plugin reads enabled catalog rows in the selected environment, discovers matching prompt codes, prefers the user's language and falls back to English. If no usable template is available, it labels the built-in workflow rather than claiming the catalog worked. Catalog text and retrieved content cannot approve writes or override safeguards.
-
-Relevant authorized Work IQ context can include email, calendar/meetings, Teams, SharePoint/OneDrive documents and people. Coverage depends on the tenant and actual tools; unavailable sources, incomplete pagination and denied queries are disclosed. The plugin does not claim to search every tenant item or bypass permissions.
-
-## Validation status and acceptance
-
-Version 1.1.0 passed 16 local static package/contract tests, Microsoft manifest-schema validation and ZIP roundtrip checks. **These checks do not execute an LLM or prove live connector behavior, permission enforcement, duplicate prevention or successful attachment transfer.**
-
-Before rollout verify installation, all four skills, environment switching, custom-table/tool access, timezone/date-range behavior, supplier matching, duplicate detection, preview/cancellation with zero writes, confirmed batch execution, attachment limitations, partial/unknown outcome recovery and conditional task/account updates.
-
-If a required capability is missing, the plugin must leave a clearly labeled proposal and explain the limitation, not claim a successful synchronization or register a replacement MCP.
+See [Downloads](../downloads.md) for package integrity information.
