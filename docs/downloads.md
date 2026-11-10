@@ -2,7 +2,7 @@
 
 ## Microsoft Supplier IQ solution
 
-[Download the unmanaged solution](downloads/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip)
+[Download the unmanaged solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip)
 
 | Property | Value |
 |---|---|
@@ -17,9 +17,11 @@
 >
 > This package is a pilot and development baseline. Import it into a non-production environment first. Create a managed package and complete environment-specific hardening before production deployment.
 
+See the [solution 1.0.0.0 release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/solution-v1.0.0.0).
+
 ## Sample Prompt Catalog workbook
 
-[Download the sample prompts](downloads/Supplier-IQ-Standard-Prompts.xlsx)
+[Download the sample prompts](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/Supplier-IQ-Standard-Prompts.xlsx)
 
 The workbook contains localized Prompt Catalog sample rows for native Dataverse Excel import. Review Agent IDs and prompt content before importing into a customer environment.
 
@@ -46,5 +48,5 @@ Get-FileHash .\MicrosoftSupplierIQ_Cowork_1_1_0.zip -Algorithm SHA256
 | File | SHA-256 |
 |---|---|
 | `MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip` | `E09649B99C7347A25E32391F30E6563364776ED767EE7E85AD0494EDC7B0B5EF` |
-| `Supplier-IQ-Standard-Prompts.xlsx` | `A8D39489D5449E961351FC0E53FB3306F9A57C3CD71051E9FF42CC48A1E4A8F6` |
 | `MicrosoftSupplierIQ_Cowork_1_1_0.zip` | `6C08B896CDAB9551B7005ED74430D196945AA73274C205532BE6E39DF841CA9F` |
+| `Supplier-IQ-Standard-Prompts.xlsx` | `6BDCAC84587A4335CF88338DAFDC3E52D371BB87FF3E4D5709AF46A44574FC23` |

@@ -7,7 +7,7 @@ The optional Supplier IQ Cowork plugin brings supplier analysis and controlled D
 | Property | Value |
 |---|---|
 | Current version | `1.1.0` |
-| Package | [Download the Cowork plugin](../downloads/MicrosoftSupplierIQ_Cowork_1_1_0.zip) |
+| Package | [Download the Cowork plugin](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip) |
 | Included skills | 4 |
 | Default behavior | Read-only analysis |
 | Writes | Previewed and explicitly confirmed only |
@@ -47,7 +47,7 @@ Environment selection remains on the existing Microsoft connection. The actual r
 
 Before installing the plugin, confirm that:
 
-1. The [Microsoft Supplier IQ solution](../downloads/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip) is installed in the target Dataverse environment.
+1. The [Microsoft Supplier IQ solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip) is installed in the target Dataverse environment.
 2. The user can access the required Supplier IQ records and Prompt Catalog rows.
 3. Microsoft Copilot Cowork and custom plugin packages are enabled for the tenant.
 4. An existing Microsoft data connection is available in Cowork and can access the selected Dataverse environment.
@@ -58,7 +58,7 @@ Start with a non-production environment and safe test records.
 
 ## Install and activate
 
-1. [Download `MicrosoftSupplierIQ_Cowork_1_1_0.zip`](../downloads/MicrosoftSupplierIQ_Cowork_1_1_0.zip).
+1. [Download `MicrosoftSupplierIQ_Cowork_1_1_0.zip`](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip).
 2. In the Cowork customization or plugin experience, upload the package using the supported custom plugin upload process.
 3. If direct upload is unavailable, follow your tenant's Microsoft 365 app approval and publication process.
 4. Enable the Supplier IQ plugin and the existing Microsoft data connection.

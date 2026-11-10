@@ -2,7 +2,7 @@
 
 ## 1. Download the package
 
-Download the [Microsoft Supplier IQ unmanaged solution](../downloads/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip).
+Download the [Microsoft Supplier IQ unmanaged solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip).
 
 The package is an unmanaged pilot and development baseline. Use a managed solution and a controlled release pipeline for production.
 
@@ -62,7 +62,7 @@ Update the affected flows with the correct prompt references for the target envi
 
 ## 6. Seed the Prompt Catalog
 
-Download the [sample Prompt Catalog workbook](../downloads/Supplier-IQ-Standard-Prompts.xlsx), then:
+Download the [sample Prompt Catalog workbook](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/Supplier-IQ-Standard-Prompts.xlsx), then:
 
 1. Open **Tables > Supplier IQ Prompt**.
 2. Select **Import > Import data from Excel**.
