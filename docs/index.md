@@ -9,12 +9,14 @@ classes:
 <section class="siq-hero">
   <div class="siq-hero__content">
     <img class="siq-hero__logo" src="assets/images/microsoft-supplier-iq-logo.png" alt="" data-no-lightbox>
-    <span class="siq-eyebrow">Microsoft Supplier IQ</span>
-    <h1>Turn supplier signals into focused action.</h1>
-    <p>Supplier profiles, Outlook signals, risks, actions, and proven prompts in one guided workspace.</p>
-    <div class="siq-actions">
-      <a class="siq-button" href="getting-started/prerequisites/">Get started</a>
-      <a class="siq-button siq-button--secondary" href="downloads/">Download Supplier IQ</a>
+    <div class="siq-hero__copy">
+      <span class="siq-eyebrow">Microsoft Supplier IQ</span>
+      <h1>Turn supplier signals into action.</h1>
+      <p>Profiles, Outlook signals, risks, actions, and proven prompts in one workspace.</p>
+      <div class="siq-actions">
+        <a class="siq-button" href="getting-started/prerequisites/">Get started</a>
+        <a class="siq-button siq-button--secondary" href="downloads/">Download Supplier IQ</a>
+      </div>
     </div>
   </div>
 </section>

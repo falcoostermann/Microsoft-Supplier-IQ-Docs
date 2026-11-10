@@ -248,10 +248,10 @@ pre {
 }
 
 .siq-hero {
-  min-height: 31rem;
+  min-height: 16rem;
   display: flex;
   align-items: center;
-  padding: clamp(2rem, 6vw, 5rem);
+  padding: clamp(1rem, 2vw, 2rem);
   margin: 0 0 2rem;
   background-image: url("../assets/images/supplier-iq-hero-background.jpg");
   background-position: center;
@@ -262,8 +262,12 @@ pre {
 }
 
 .siq-hero__content {
-  max-width: 46rem;
-  padding: clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 64rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   background: var(--cp-panel);
   border: 1px solid var(--cp-sheen);
   border-radius: 16px;
@@ -272,9 +276,12 @@ pre {
 
 .siq-hero__logo {
   display: block;
-  width: clamp(4.5rem, 8vw, 6.5rem);
+  width: clamp(5.5rem, 9vw, 7rem);
   height: auto;
-  margin-bottom: 1.25rem;
+}
+
+.siq-hero__copy {
+  min-width: 0;
 }
 
 .siq-eyebrow {
@@ -288,17 +295,17 @@ pre {
 }
 
 .siq-hero h1 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
   color: var(--cp-text);
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  line-height: 1.03;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.05;
 }
 
 .siq-hero p {
   max-width: 38rem;
   margin: 0;
   color: var(--cp-text-muted);
-  font-size: 1.08rem;
+  font-size: 1rem;
 }
 
 .siq-actions {
@@ -652,6 +659,23 @@ pre {
   .siq-hero {
     min-height: auto;
     padding: 1rem;
+  }
+
+  .siq-hero__content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .siq-hero__logo {
+    width: 4rem;
+  }
+
+  .siq-hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+  }
+
+  .siq-hero .siq-actions {
+    margin-top: 1rem;
   }
 
   .md-content__inner:has(.siq-hero) {
