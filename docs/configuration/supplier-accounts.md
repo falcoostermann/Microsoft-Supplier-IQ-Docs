@@ -1,6 +1,6 @@
 # Supplier accounts
 
-Use the standard Dataverse Account table.
+Use the standard Dataverse Account table. Supplier IQ extends it with the **Is Supplier** attribute so organizations that already use Accounts in Sales or Service can clearly distinguish supplier records without introducing a separate supplier table.
 
 ![Supplier Cockpit showing the buyer's supplier portfolio, performance indicators, tasks, and appointments](../assets/screenshots/supplier-cockpit.png)
 
