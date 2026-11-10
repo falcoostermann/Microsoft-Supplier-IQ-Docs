@@ -8,9 +8,10 @@ classes:
 
 <section class="siq-hero">
   <div class="siq-hero__content">
+    <img class="siq-hero__logo" src="assets/images/microsoft-supplier-iq-logo.png" alt="" data-no-lightbox>
     <span class="siq-eyebrow">Microsoft Supplier IQ</span>
     <h1>Turn supplier signals into focused action.</h1>
-    <p>Bring supplier profiles, Outlook conversations, risks, actions, and proven procurement prompts into one guided workspace.</p>
+    <p>Supplier profiles, Outlook signals, risks, actions, and proven prompts in one guided workspace.</p>
     <div class="siq-actions">
       <a class="siq-button" href="getting-started/prerequisites/">Get started</a>
       <a class="siq-button siq-button--secondary" href="downloads/">Download Supplier IQ</a>
@@ -35,24 +36,36 @@ classes:
   <h2>Everything buyers need, without scattered context</h2>
   <div class="siq-grid">
     <a class="siq-card" href="getting-started/prerequisites/">
+      <span class="siq-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.74V18h8v-3.26A7 7 0 0 0 12 2Zm2 11.55-.75.44V16h-2.5v-2.01l-.75-.44A5 5 0 1 1 14 13.55ZM9 20h6v2H9v-2Z"/></svg>
+      </span>
       <span class="siq-card__label">Get started</span>
       <h3>Plan a pilot</h3>
-      <p>Understand licensing, capacity, connectors, administrative access, and onboarding steps.</p>
+      <p>Licensing, capacity, access, and onboarding.</p>
     </a>
     <a class="siq-card" href="configuration/supplier-accounts/">
+      <span class="siq-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94a7.43 7.43 0 0 0 .05-.94 7.43 7.43 0 0 0-.05-.94l2.03-1.58-1.92-3.32-2.39.96a7.21 7.21 0 0 0-1.63-.94L14.87 3h-3.74l-.36 3.18c-.58.24-1.13.55-1.63.94l-2.39-.96-1.92 3.32 2.03 1.58A7.43 7.43 0 0 0 6.81 12c0 .32.02.63.05.94l-2.03 1.58 1.92 3.32 2.39-.96c.5.39 1.05.7 1.63.94l.36 3.18h3.74l.36-3.18c.58-.24 1.13-.55 1.63-.94l2.39.96 1.92-3.32-2.03-1.58ZM13 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/></svg>
+      </span>
       <span class="siq-card__label">Configure</span>
       <h3>Shape the supplier experience</h3>
-      <p>Control which Accounts appear, manage prompts, and apply the right security model.</p>
+      <p>Suppliers, prompts, and access in a few clear steps.</p>
     </a>
     <a class="siq-card" href="architecture/overview/">
+      <span class="siq-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M11 2h2v5h-2V2Zm-7 9h5v2H4v-2Zm11 0h5v2h-5v-2Zm-4 6h2v5h-2v-5ZM8.46 6.05 9.88 7.46 6.34 11 4.93 9.59l3.53-3.54Zm7.08 0 3.53 3.54L17.66 11l-3.54-3.54 1.42-1.41ZM6.34 13l3.54 3.54-1.42 1.41-3.53-3.54L6.34 13Zm11.32 0 1.41 1.41-3.53 3.54-1.42-1.41L17.66 13ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg>
+      </span>
       <span class="siq-card__label">Architecture</span>
       <h3>Understand how it works</h3>
-      <p>Explore Dataverse, Power Apps, Power Automate, Outlook, Teams, SharePoint, and Copilot integration.</p>
+      <p>See how Microsoft cloud services connect.</p>
     </a>
     <a class="siq-card" href="downloads/">
+      <span class="siq-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3ZM5 19h14v2H5v-2Z"/></svg>
+      </span>
       <span class="siq-card__label">Downloads</span>
       <h3>Install the latest release</h3>
-      <p>Get the Supplier IQ solution, sample Prompt Catalog workbook, and Cowork plugin.</p>
+      <p>Solution, sample prompts, and Cowork plugin.</p>
     </a>
   </div>
 </section>

@@ -192,8 +192,10 @@ pre {
 }
 
 .md-content__inner:has(.siq-hero) {
-  max-width: none;
-  padding: 0 0 4rem;
+  width: min(100%, 90rem);
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 4rem) 4rem;
 }
 
 .md-typeset h1,
@@ -266,6 +268,13 @@ pre {
   border: 1px solid var(--cp-sheen);
   border-radius: 16px;
   backdrop-filter: blur(18px);
+}
+
+.siq-hero__logo {
+  display: block;
+  width: clamp(4.5rem, 8vw, 6.5rem);
+  height: auto;
+  margin-bottom: 1.25rem;
 }
 
 .siq-eyebrow {
@@ -359,7 +368,14 @@ pre {
 }
 
 .siq-card {
-  display: block;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon label"
+    "icon title"
+    "icon copy";
+  column-gap: 1.25rem;
+  align-content: start;
   min-height: 12rem;
   padding: 1.5rem;
   color: var(--cp-text) !important;
@@ -375,9 +391,28 @@ pre {
   transform: translateY(-2px);
 }
 
+.siq-card__icon {
+  grid-area: icon;
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  color: var(--cp-accent);
+  background: var(--cp-accent-soft);
+  border: 1px solid var(--cp-border);
+  border-radius: 0.625rem;
+}
+
+.siq-card__icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: currentColor;
+}
+
 .siq-card__label {
+  grid-area: label;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   color: var(--cp-accent);
   font-size: 0.78rem;
   font-weight: 700;
@@ -386,11 +421,13 @@ pre {
 }
 
 .siq-card h3 {
+  grid-area: title;
   margin: 0 0 0.5rem;
   font-size: 1.35rem;
 }
 
 .siq-card p {
+  grid-area: copy;
   margin: 0;
   color: var(--cp-text-muted);
 }
@@ -414,6 +451,54 @@ pre {
 
 .siq-showcase p {
   color: var(--cp-text-muted);
+}
+
+.siq-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.siq-summary-card {
+  position: relative;
+  min-height: 8rem;
+  padding: 1.25rem;
+  background: var(--cp-surface-soft);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+}
+
+.siq-summary-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.siq-summary-card p {
+  margin: 0;
+  color: var(--cp-text-muted);
+}
+
+.siq-summary-card__number {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  place-items: center;
+  color: var(--cp-accent-fg);
+  background: var(--cp-accent);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.siq-rule {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  color: var(--cp-text);
+  background: var(--cp-accent-soft);
+  border-left: 4px solid var(--cp-accent);
+  border-radius: 0.625rem;
+  font-size: 1.05rem;
 }
 
 .siq-download-grid {
@@ -559,6 +644,7 @@ pre {
 
   .siq-grid,
   .siq-showcase,
+  .siq-summary-grid,
   .siq-download-grid {
     grid-template-columns: 1fr;
   }
@@ -566,6 +652,11 @@ pre {
   .siq-hero {
     min-height: auto;
     padding: 1rem;
+  }
+
+  .md-content__inner:has(.siq-hero) {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   .siq-lightbox {

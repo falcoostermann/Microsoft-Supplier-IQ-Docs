@@ -1,61 +1,44 @@
 # Security
 
-Supplier IQ includes two Dataverse security roles. These roles are different from Microsoft Entra security groups.
+Supplier IQ uses two Dataverse roles.
 
-## Supplier IQ User
+<div class="siq-summary-grid" markdown>
 
-Assign **Supplier IQ User** to application users.
+<div class="siq-summary-card" markdown>
+### Supplier IQ User
+Use the app, activities, and prompts. Prompt Catalog is read-only.
+</div>
 
-The role provides the baseline privileges required for the model-driven app, standard Dynamics tables, activities, and Supplier IQ custom tables. For the Prompt Catalog, it provides organization-level read access without prompt create, update, or delete privileges.
+<div class="siq-summary-card" markdown>
+### Supplier IQ Administrator
+Supplemental role for creating, editing, and deleting prompts.
+</div>
 
-Review the role against the customer's business-unit, ownership, and least-privilege model before production use.
+</div>
 
-## Supplier IQ Administrator
+## Recommended assignment
 
-Assign **Supplier IQ Administrator** as a supplemental role to users who maintain Prompt Catalog content.
-
-It grants organization-level permissions on Supplier IQ Prompt:
-
-- Read
-- Create
-- Write
-- Delete
-- Append
-- Append To
-
-The Prompt Catalog settings icon is displayed by checking the user's actual prompt-management privileges, not by checking a role name.
-
-## Microsoft Entra security groups
-
-The solution does not create Microsoft Entra security groups. Organizations can use Entra groups in two common ways:
-
-1. Associate an Entra security group with the Power Platform environment to control who can enter it.
-2. Create Dataverse group teams linked to Entra groups and assign Supplier IQ security roles to those teams.
-
-A typical model is:
-
-| Entra group or Dataverse team | Assigned Dataverse role |
+| Entra group or Dataverse team | Dataverse role |
 |---|---|
 | Supplier IQ Users | Supplier IQ User |
 | Supplier IQ Administrators | Supplier IQ User + Supplier IQ Administrator |
 
-Group membership and environment access are deployment-specific and are not transported in the solution package.
+The solution does not create Entra groups. Environment access and group membership remain deployment-specific.
 
-## Record-level access
+## What controls access
 
-Application filters do not replace Dataverse security:
+- **Is Supplier** determines which Accounts qualify.
+- **Ownership and Procurement Team Membership** shape the cockpit portfolio.
+- **Dataverse security** determines which rows users can actually read or change.
 
-- `Is Supplier = Yes` controls which Accounts qualify for Supplier IQ experiences.
-- Account ownership and Procurement Team Membership control the Supplier Cockpit portfolio.
-- Dataverse roles, teams, ownership, business units, and sharing determine which rows the user can actually read or change.
+## Production checks
 
-## Production checklist
+- [ ] Validate least privilege for Accounts, Contacts, activities, and custom tables.
+- [ ] Restrict Prompt Catalog maintenance to administrators.
+- [ ] Configure DLP for Outlook, Teams, SharePoint, Dataverse, and AI Builder.
+- [ ] Define auditing, retention, and deletion policies.
+- [ ] Review connection owners and service accounts.
+- [ ] Test with a non-administrator.
 
-- validate least-privilege access for Account, Contact, Email, Appointment, and Task;
-- validate ownership of every custom table;
-- restrict Prompt Catalog maintenance to administrators;
-- configure DLP policies for Outlook, Teams, SharePoint, Dataverse, and AI Builder;
-- enable auditing where required;
-- define retention and deletion policies;
-- review service accounts and connection owners;
-- test with a non-administrator user before rollout.
+??? info "Administrator privileges"
+    The supplemental role grants organization-level Read, Create, Write, Delete, Append, and Append To on Supplier IQ Prompt. The settings icon checks these privileges directly, not the role name.

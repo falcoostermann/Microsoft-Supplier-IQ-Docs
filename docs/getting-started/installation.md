@@ -1,35 +1,55 @@
 # Installation
 
-## 1. Download the package
+Install Supplier IQ in four stages: import, connect, configure, validate.
 
-Download the [Microsoft Supplier IQ unmanaged solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip).
+<div class="siq-summary-grid" markdown>
 
-The package is an unmanaged pilot and development baseline. Use a managed solution and a controlled release pipeline for production.
+<div class="siq-summary-card" markdown>
+<span class="siq-summary-card__number">1</span>
+### Import
+Download and import the solution.
+</div>
 
-## 2. Import the solution
+<div class="siq-summary-card" markdown>
+<span class="siq-summary-card__number">2</span>
+### Connect
+Map Dataverse and Microsoft 365 connections.
+</div>
 
-Import from Power Apps:
+<div class="siq-summary-card" markdown>
+<span class="siq-summary-card__number">3</span>
+### Configure
+Set suppliers, prompts, links, and security.
+</div>
 
-1. Open **Solutions** in the target environment.
-2. Select **Import solution**.
-3. Upload the downloaded ZIP package.
-4. Map all connection references.
-5. Complete the import and publish all customizations.
+<div class="siq-summary-card" markdown>
+<span class="siq-summary-card__number">4</span>
+### Validate
+Run the end-to-end smoke test.
+</div>
 
-Alternatively, use Power Platform CLI:
+</div>
 
-```powershell
-pac auth create --environment "https://<environment>.crm.dynamics.com"
-pac solution import `
-  --path ".\MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip" `
-  --publish-changes
-```
+## 1. Import
 
-## 3. Map connection references
+[Download Supplier IQ 1.0.1.0](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip){ .siq-button }
 
-Configure:
+In Power Apps, open **Solutions**, select **Import solution**, upload the ZIP, map the connections, and publish.
 
-| Connection reference | Connector |
+!!! note "Pilot package"
+    The download is unmanaged. Use a managed solution and controlled pipeline for production.
+
+??? info "Power Platform CLI"
+    ```powershell
+    pac auth create --environment "https://<environment>.crm.dynamics.com"
+    pac solution import `
+      --path ".\MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip" `
+      --publish-changes
+    ```
+
+## 2. Connect
+
+| Connection | Connector |
 |---|---|
 | `siq_Dataverse` | Microsoft Dataverse |
 | `siq_Office365Outlook` | Office 365 Outlook |
@@ -37,62 +57,24 @@ Configure:
 | `siq_Teams` | Microsoft Teams |
 | `siq_SharePoint` | SharePoint |
 
-## 4. Configure environment-specific values
+Review environment-specific URLs, SharePoint locations, Copilot Agent IDs, and AI Builder prompt references. Use environment variables for production ALM.
 
-Review and replace environment-specific values for:
+## 3. Configure
 
-- model-driven app deep links;
-- Dataverse environment URLs;
-- SharePoint site and library locations;
-- Microsoft 365 Copilot Agent IDs;
-- AI Builder custom prompt references.
+- **AI prompts:** validate relevance scoring, summaries, supplier news, and presentation generation.
+- **Prompt Catalog:** [import the sample workbook](../configuration/prompts.md#import-the-sample-workbook).
+- **Suppliers:** set **Is Supplier = Yes** on active Accounts.
+- **Security:** assign **Supplier IQ User**; add **Supplier IQ Administrator** only for prompt maintainers.
 
-Use environment variables for production ALM instead of editing flow definitions directly.
+## 4. Validate
 
-## 5. Configure AI Builder prompts
+- [ ] Supplier Cockpit shows the expected portfolio.
+- [ ] Outlook scan finds recent activity.
+- [ ] A tracked email receives the correct Dataverse regarding record.
+- [ ] Supplier Insights generate successfully.
+- [ ] A catalog prompt receives the selected supplier name.
+- [ ] Reminders and SharePoint output reach the expected destination.
 
-The package references four AI model components. Validate or replace the custom prompts used for:
+## Optional: Cowork
 
-- Outlook activity relevance scoring;
-- supplier activity summaries;
-- supplier news;
-- presentation generation.
-
-Update the affected flows with the correct prompt references for the target environment.
-
-## 6. Seed the Prompt Catalog
-
-Download the [sample Prompt Catalog workbook](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Supplier-IQ-Standard-Prompts.xlsx), then:
-
-1. Open **Tables > Supplier IQ Prompt**.
-2. Select **Import > Import data from Excel**.
-3. Upload the workbook.
-4. Map the columns to the matching Dataverse columns.
-5. review the import and confirm the localized rows.
-
-See [Prompt Catalog configuration](../configuration/prompts.md) for field guidance and ongoing maintenance.
-
-## 7. Configure supplier Accounts
-
-Set **Is Supplier** to **Yes** on every active Account that Supplier IQ should treat as a supplier. Configure Account ownership and Procurement Team Membership records to control the Supplier Cockpit portfolio.
-
-See [Supplier accounts](../configuration/supplier-accounts.md).
-
-## 8. Assign security
-
-Assign **Supplier IQ User** to all users. Assign the supplemental **Supplier IQ Administrator** role only to users who maintain Prompt Catalog entries.
-
-## 9. Smoke test
-
-1. Open the Microsoft Supplier IQ app.
-2. Verify Get Started navigation.
-3. Verify the Supplier Cockpit portfolio.
-4. Authorize Outlook and scan recent activity.
-5. Track an email and confirm the Dataverse regarding record.
-6. Generate Supplier Insights and verify the cache status.
-7. Open a prompt, select a supplier, and confirm the prepared prompt.
-8. Verify scheduled reminders and required SharePoint output.
-
-## Optional Cowork plugin
-
-Install the separate [Supplier IQ Cowork plugin 1.1.0](cowork-plugin.md) to use supplier skills and the Inbox Email Tracker in Microsoft Copilot Cowork. It uses an existing authorized Microsoft connection and requires its own app-package installation and acceptance tests; it is not included in the Dataverse solution import above.
+Install the separate [Supplier IQ Cowork plugin](cowork-plugin.md) for supplier skills and Inbox Email Tracker in Microsoft Copilot Cowork.

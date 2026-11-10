@@ -1,83 +1,56 @@
 # Prompt Catalog
 
-The Prompt Catalog stores customer-maintainable, localized procurement prompts in the `siq_prompt` Dataverse table.
+Store reusable, localized procurement prompts in the `siq_prompt` Dataverse table.
 
 ![Prompt Catalog with search, agent and category filters, and procurement prompt cards](../assets/screenshots/prompt-catalog.png)
 
-*The catalog loads enabled, localized prompts from Dataverse.*
+<div class="siq-rule" markdown>
+**Enabled prompt** + **current user language** → visible in the catalog
+</div>
 
-## How prompts are loaded
-
-- Only rows where **Enabled = Yes** are loaded.
-- The catalog uses the current Dynamics 365 user language.
-- If a localized row is unavailable, the English row is used as fallback.
-- Prompts are ordered by **Sort Order** and title.
-- **Prompt Code + Language Code** is unique and must remain stable.
+English is the fallback language. **Prompt Code + Language Code** must be unique; **Sort Order** controls placement.
 
 ## Prompt columns
 
-| Display purpose | Logical name | Guidance |
+| Purpose | Logical name | Use |
 |---|---|---|
-| Title | `siq_title` | Short card and dialog title |
-| Prompt Code | `siq_promptcode` | Stable identifier shared by all language versions |
-| Language Code | `siq_languagecode` | Use `en` or `de` |
-| Description | `siq_description` | Short explanation for the catalog card |
-| Prompt Text | `siq_prompttext` | Full editable prompt |
-| Agent | `siq_agent` | Agent display name used for catalog grouping and routing |
-| Agent ID | `siq_agentid` | Optional environment-specific agent identifier |
-| Category | `siq_category` | Catalog category |
-| Tags | `siq_tags` | Semicolon-separated search terms |
-| Source | `siq_source` | Origin or owner of the prompt |
-| Sort Order | `siq_sortorder` | Numeric display order |
-| Enabled | `siq_enabled` | Controls catalog visibility |
+| Identity | `siq_promptcode`, `siq_languagecode` | Stable code plus `en` or `de` |
+| Card | `siq_title`, `siq_description` | Short, scannable copy |
+| Content | `siq_prompttext` | Full editable prompt |
+| Routing | `siq_agent`, `siq_agentid` | Display name and optional environment ID |
+| Discovery | `siq_category`, `siq_tags` | Category and semicolon-separated terms |
+| Governance | `siq_source`, `siq_sortorder`, `siq_enabled` | Owner, order, and visibility |
 
 ## Create a prompt in Dataverse
 
-Users with the **Supplier IQ Administrator** role can open the Prompt Catalog and select the settings icon. The icon is privilege-controlled and opens the active Supplier IQ Prompt view.
+Administrators select the settings icon and create a Supplier IQ Prompt row:
 
-To create a prompt:
-
-1. Create a Supplier IQ Prompt row.
-2. Enter a stable Prompt Code.
-3. Set Language Code to `en` or `de`.
-4. Enter title, description, prompt text, agent, and category.
-5. Use semicolons between tags.
-6. Set Sort Order.
-7. Set Enabled to Yes.
-8. Save the row and refresh the Prompt Catalog.
-
-Create a separate row for each language while keeping the same Prompt Code.
+1. Reuse one stable **Prompt Code** across languages.
+2. Create one row per **Language Code** (`en` or `de`).
+3. Add concise card copy and the full prompt.
+4. Set agent, category, tags, order, and **Enabled = Yes**.
+5. Save and refresh the catalog.
 
 ## Supplier placeholder
 
-All standard prompts are supplier-focused. Use the canonical placeholder:
+Use the canonical supplier placeholder:
 
 ```text
 [SUPPLIER NAME(S)]
 ```
 
-The Prompt Catalog requires a supplier Account selection and replaces this placeholder with the selected Account name. Other placeholders remain editable.
-
-Do not store the selected supplier name back in the canonical Dataverse prompt row.
+The catalog replaces it with the selected Account name. Other placeholders remain editable; the canonical Dataverse row is never overwritten.
 
 ![Prompt dialog with the required supplier Account selector and editable prompt](../assets/screenshots/prompt-dialog.png)
 
-*The selected supplier is inserted into the editable prompt before it is copied or opened in Microsoft 365 Copilot.*
-
 ## Import the sample workbook
 
-Download [Supplier-IQ-Standard-Prompts.xlsx](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Supplier-IQ-Standard-Prompts.xlsx).
+[Download sample prompts](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Supplier-IQ-Standard-Prompts.xlsx){ .siq-button }
 
-1. Open **Tables > Supplier IQ Prompt**.
-2. Select **Import > Import data from Excel**.
-3. Upload the workbook.
-4. Map columns to the matching display names.
-5. Review the import and confirm the rows.
+Open **Tables > Supplier IQ Prompt > Import data from Excel**, upload the workbook, map the columns, and confirm the rows. Review environment-specific Agent IDs before import.
 
-The workbook contains localized sample prompts. Agent IDs are environment-specific and should be reviewed before import.
-
-For ongoing bulk maintenance, use **Edit data in Excel** from the Supplier IQ Prompt view rather than repeatedly importing the seed workbook.
+Use **Edit data in Excel** for ongoing bulk maintenance.
 
 ## Copilot hand-off
 
-The prompt remains editable in the dialog. When the user selects **Open in agent**, Supplier IQ opens the Microsoft 365 Copilot panel and sends the prepared prompt with automatic submission disabled. The user remains in control and can review the final content before sending.
+**Open in agent** prepares the prompt in Microsoft 365 Copilot without submitting it. The user reviews and sends it.
