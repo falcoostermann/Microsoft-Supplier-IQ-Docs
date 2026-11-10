@@ -12,15 +12,23 @@ This repository contains the public product and deployment documentation. It pro
 
 ## Documentation
 
+### Get started
+
 - [Prerequisites](docs/getting-started/prerequisites.md)
 - [Installation](docs/getting-started/installation.md)
-- [Solution architecture](docs/architecture/overview.md)
-- [Dataverse data model](docs/architecture/data-model.md)
-- [Automation and integrations](docs/architecture/automation.md)
+- [Cowork plugin installation and usage](docs/getting-started/cowork-plugin.md)
+
+### Configuration
+
 - [Supplier Account configuration](docs/configuration/supplier-accounts.md)
 - [Prompt Catalog administration](docs/configuration/prompts.md)
 - [Security roles and groups](docs/configuration/security.md)
-- [Cowork plugin installation and usage](docs/getting-started/cowork-plugin.md)
+
+### Architecture
+
+- [Solution architecture](docs/architecture/overview.md)
+- [Dataverse data model](docs/architecture/data-model.md)
+- [Automation and integrations](docs/architecture/automation.md)
 
 ## Capabilities
 
@@ -32,8 +40,8 @@ This repository contains the public product and deployment documentation. It pro
 
 ## Downloads
 
-- [Microsoft Supplier IQ unmanaged solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip)
-- [Sample Prompt Catalog workbook](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/Supplier-IQ-Standard-Prompts.xlsx)
+- [Microsoft Supplier IQ unmanaged solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/solution-v1.0.0.0) and [installation](docs/getting-started/installation.md#2-import-the-solution)
+- [Sample Prompt Catalog workbook](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/Supplier-IQ-Standard-Prompts.xlsx) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/solution-v1.0.0.0) and [import instructions](docs/getting-started/installation.md#6-seed-the-prompt-catalog)
 - [Supplier IQ Cowork plugin 1.1.0](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/cowork-v1.1.0) and [installation](docs/getting-started/cowork-plugin.md)
 
 The downloadable solution is an unmanaged development and pilot baseline. Create a managed release and complete environment-specific hardening before a production rollout.
