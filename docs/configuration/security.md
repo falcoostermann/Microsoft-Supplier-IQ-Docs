@@ -1,20 +1,13 @@
 # Security
 
-Supplier IQ uses two Dataverse roles.
+Supplier IQ uses two additive Dataverse roles.
 
-<div class="siq-summary-grid" markdown>
+| Role | Can do | Access | Does not grant |
+|---|---|---|---|
+| **Supplier IQ User** | Use the Supplier IQ app, maintain supplier-related records and run the supported experiences | Accounts, Contacts, activities, Supplier IQ operational tables, and read-only Prompt Catalog | Creating, editing, or deleting Prompt Catalog rows; environment administration; access to rows restricted by other Dataverse controls |
+| **Supplier IQ Administrator** | Create, read, edit, and delete Prompt Catalog rows across the environment | Supplier IQ Prompt, including the relationship privileges required to manage prompt rows | Access to the Supplier IQ app, Accounts, activities, or other Supplier IQ tables when assigned by itself |
 
-<div class="siq-summary-card" markdown>
-### Supplier IQ User
-Use the app, activities, and prompts. Prompt Catalog is read-only.
-</div>
-
-<div class="siq-summary-card" markdown>
-### Supplier IQ Administrator
-Supplemental role for creating, editing, and deleting prompts.
-</div>
-
-</div>
+Assign **Supplier IQ Administrator** together with **Supplier IQ User**. Effective Dataverse permissions are additive.
 
 ## Recommended assignment
 
@@ -39,7 +32,3 @@ The solution does not create Entra groups. Environment access and group membersh
 - [ ] Define auditing, retention, and deletion policies.
 - [ ] Review connection owners and service accounts.
 - [ ] Test with a non-administrator.
-
-## Administrator scope
-
-The supplemental role grants organization-level **Read, Create, Write, Delete, Append, and Append To** on Supplier IQ Prompt. The settings icon checks these privileges directly, not the role name.

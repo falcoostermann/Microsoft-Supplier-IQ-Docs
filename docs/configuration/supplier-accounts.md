@@ -1,10 +1,6 @@
 # Supplier accounts
 
-Use the standard Dataverse Account table. One field activates the Supplier IQ experience:
-
-<div class="siq-rule" markdown>
-**Active Account** + **Is Supplier = Yes** → visible to Supplier IQ
-</div>
+Use the standard Dataverse Account table.
 
 ![Supplier Cockpit showing the buyer's supplier portfolio, performance indicators, tasks, and appointments](../assets/screenshots/supplier-cockpit.png)
 

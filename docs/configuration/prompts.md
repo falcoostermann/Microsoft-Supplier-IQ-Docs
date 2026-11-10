@@ -4,10 +4,6 @@ Store reusable, localized procurement prompts in the `siq_prompt` Dataverse tabl
 
 ![Prompt Catalog with search, agent and category filters, and procurement prompt cards](../assets/screenshots/prompt-catalog.png)
 
-<div class="siq-rule" markdown>
-**Enabled prompt** + **current user language** → visible in the catalog
-</div>
-
 English is the fallback language. **Prompt Code + Language Code** must be unique; **Sort Order** controls placement.
 
 ## Prompt columns
