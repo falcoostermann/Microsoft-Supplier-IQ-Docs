@@ -39,13 +39,14 @@ In Power Apps, open **Solutions**, select **Import solution**, upload the ZIP, m
 !!! note "Pilot package"
     The download is unmanaged. Use a managed solution and controlled pipeline for production.
 
-??? info "Power Platform CLI"
-    ```powershell
-    pac auth create --environment "https://<environment>.crm.dynamics.com"
-    pac solution import `
-      --path ".\MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip" `
-      --publish-changes
-    ```
+### CLI alternative
+
+```powershell
+pac auth create --environment "https://<environment>.crm.dynamics.com"
+pac solution import `
+  --path ".\MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip" `
+  --publish-changes
+```
 
 ## 2. Connect
 

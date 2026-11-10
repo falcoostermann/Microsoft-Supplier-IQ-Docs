@@ -1,5 +1,7 @@
 # Automation and integrations
 
+Supplier IQ uses a small set of purpose-built flows with explicit connection ownership and operational boundaries.
+
 ## Power Automate inventory
 
 | Flow | Trigger | Main connectors | Purpose |

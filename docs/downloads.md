@@ -9,7 +9,7 @@ Choose the package you need. Start with the solution, then add sample prompts or
     <p>Unmanaged Dataverse solution for pilot and development environments.</p>
     <div class="siq-actions">
       <a class="siq-button" href="https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip">Download solution</a>
-      <a href="../getting-started/installation/#2-import-the-solution">Installation</a>
+      <a href="../getting-started/installation/#1-import">Installation</a>
     </div>
   </div>
   <div class="siq-download-card">
@@ -18,7 +18,7 @@ Choose the package you need. Start with the solution, then add sample prompts or
     <p>Localized sample prompts prepared for native Dataverse Excel import.</p>
     <div class="siq-actions">
       <a class="siq-button" href="https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Supplier-IQ-Standard-Prompts.xlsx">Download workbook</a>
-      <a href="../getting-started/installation/#6-seed-the-prompt-catalog">Import guidance</a>
+      <a href="../configuration/prompts/#import-the-sample-workbook">Import guidance</a>
     </div>
   </div>
   <div class="siq-download-card">

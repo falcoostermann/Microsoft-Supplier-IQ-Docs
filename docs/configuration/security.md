@@ -40,5 +40,6 @@ The solution does not create Entra groups. Environment access and group membersh
 - [ ] Review connection owners and service accounts.
 - [ ] Test with a non-administrator.
 
-??? info "Administrator privileges"
-    The supplemental role grants organization-level Read, Create, Write, Delete, Append, and Append To on Supplier IQ Prompt. The settings icon checks these privileges directly, not the role name.
+## Administrator scope
+
+The supplemental role grants organization-level **Read, Create, Write, Delete, Append, and Append To** on Supplier IQ Prompt. The settings icon checks these privileges directly, not the role name.

@@ -136,8 +136,8 @@ pre {
   min-width: 0;
   background: var(--cp-surface);
   border: 1px solid var(--cp-border);
-  border-radius: 16px;
-  box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .md-content__inner {
@@ -210,14 +210,31 @@ pre {
   margin-bottom: 1rem;
 }
 
+.md-content:not(:has(.siq-hero)) .md-content__inner > p:first-of-type {
+  margin-bottom: 2rem;
+  color: var(--cp-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.md-content:not(:has(.siq-hero)) .md-content__inner > h2 {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cp-border);
+}
+
 .md-typeset a {
   color: var(--cp-link);
 }
 
 .md-typeset table:not([class]) {
-  background: var(--cp-surface);
-  border: 1px solid var(--cp-border);
-  border-radius: 0.625rem;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--cp-border-strong);
+  border-bottom: 1px solid var(--cp-border-strong);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .md-typeset table:not([class]) th {
@@ -230,10 +247,22 @@ pre {
   border-color: var(--cp-border);
 }
 
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--cp-accent-soft);
+}
+
+.md-typeset pre {
+  border-left: 4px solid var(--cp-accent);
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .md-typeset .admonition,
 .md-typeset details {
   background: var(--cp-surface);
   border-color: var(--cp-accent);
+  border-radius: 0;
+  box-shadow: none;
   color: var(--cp-text);
 }
 
@@ -463,17 +492,19 @@ pre {
 .siq-summary-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
   margin: 1.5rem 0 2rem;
 }
 
 .siq-summary-card {
   position: relative;
-  min-height: 8rem;
-  padding: 1.25rem;
-  background: var(--cp-surface-soft);
-  border: 1px solid var(--cp-border);
-  border-radius: 16px;
+  min-height: 0;
+  padding: 0 0 0 1rem;
+  background: transparent;
+  border: 0;
+  border-left: 3px solid var(--cp-accent);
+  border-radius: 0;
 }
 
 .siq-summary-card h3 {
@@ -487,14 +518,10 @@ pre {
 }
 
 .siq-summary-card__number {
-  display: grid;
-  width: 2rem;
-  height: 2rem;
-  margin-bottom: 1rem;
-  place-items: center;
-  color: var(--cp-accent-fg);
-  background: var(--cp-accent);
-  border-radius: 50%;
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--cp-accent);
+  background: transparent;
   font-weight: 700;
 }
 
@@ -502,9 +529,9 @@ pre {
   margin: 1.25rem 0 1.5rem;
   padding: 1rem 1.25rem;
   color: var(--cp-text);
-  background: var(--cp-accent-soft);
+  background: transparent;
   border-left: 4px solid var(--cp-accent);
-  border-radius: 0.625rem;
+  border-radius: 0;
   font-size: 1.05rem;
 }
 
