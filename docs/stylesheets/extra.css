@@ -78,6 +78,10 @@ body {
   color: var(--cp-text);
 }
 
+.md-main {
+  background: var(--cp-surface-soft);
+}
+
 code,
 kbd,
 pre {
@@ -119,22 +123,77 @@ pre {
   color: var(--cp-text);
 }
 
-.md-sidebar,
-.md-nav {
-  color: var(--cp-text-muted);
-}
-
-.md-nav__link--active,
-.md-nav__link:hover {
-  color: var(--cp-accent);
+.md-grid {
+  max-width: 90rem;
 }
 
 .md-main__inner {
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.md-content {
+  min-width: 0;
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border);
 }
 
 .md-content__inner {
-  padding-bottom: 4rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2.5rem 3rem 4rem;
+}
+
+.md-sidebar,
+.md-nav {
+  color: var(--cp-text-soft);
+}
+
+.md-sidebar {
+  font-size: 0.72rem;
+}
+
+.md-sidebar__inner {
+  padding-top: 0.5rem;
+}
+
+.md-nav__title {
+  color: var(--cp-text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.md-nav__link {
+  line-height: 1.35;
+}
+
+.md-nav__link--active {
+  color: var(--cp-accent);
+  font-weight: 650;
+}
+
+.md-nav__link:hover {
+  color: var(--cp-text);
+}
+
+.md-content:has(.siq-hero) {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.md-main:has(.siq-hero) {
+  background: var(--cp-bg);
+}
+
+.md-content__inner:has(.siq-hero) {
+  max-width: none;
+  padding: 0 0 4rem;
 }
 
 .md-typeset h1,
@@ -182,7 +241,7 @@ pre {
   border-top: 1px solid var(--cp-border);
 }
 
-.siq-home .md-content__inner > h1 {
+.md-content__inner:has(.siq-hero) > h1 {
   display: none;
 }
 
@@ -479,7 +538,25 @@ pre {
   border-color: var(--cp-accent);
 }
 
+@media screen and (min-width: 76.25rem) {
+  .md-sidebar--primary {
+    border-right: 1px solid var(--cp-border);
+  }
+
+  .md-sidebar--secondary {
+    border-left: 1px solid var(--cp-border);
+  }
+}
+
 @media screen and (max-width: 60rem) {
+  .md-main__inner {
+    margin-top: 1rem;
+  }
+
+  .md-content__inner {
+    padding: 1.5rem 1.25rem 3rem;
+  }
+
   .siq-grid,
   .siq-showcase,
   .siq-download-grid {
