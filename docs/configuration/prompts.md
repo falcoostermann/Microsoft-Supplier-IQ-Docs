@@ -2,6 +2,10 @@
 
 The Prompt Catalog stores customer-maintainable, localized procurement prompts in the `siq_prompt` Dataverse table.
 
+![Prompt Catalog with search, agent and category filters, and procurement prompt cards](../assets/screenshots/prompt-catalog.png)
+
+*The catalog loads enabled, localized prompts from Dataverse.*
+
 ## How prompts are loaded
 
 - Only rows where **Enabled = Yes** are loaded.
@@ -55,6 +59,10 @@ All standard prompts are supplier-focused. Use the canonical placeholder:
 The Prompt Catalog requires a supplier Account selection and replaces this placeholder with the selected Account name. Other placeholders remain editable.
 
 Do not store the selected supplier name back in the canonical Dataverse prompt row.
+
+![Prompt dialog with the required supplier Account selector and editable prompt](../assets/screenshots/prompt-dialog.png)
+
+*The selected supplier is inserted into the editable prompt before it is copied or opened in Microsoft 365 Copilot.*
 
 ## Import the sample workbook
 

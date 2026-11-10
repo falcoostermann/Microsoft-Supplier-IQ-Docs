@@ -2,6 +2,10 @@
 
 Supplier IQ uses the standard Dataverse Account table. The **Is Supplier** column is the primary functional switch.
 
+![Supplier Cockpit showing the buyer's supplier portfolio, performance indicators, tasks, and appointments](../assets/screenshots/supplier-cockpit.png)
+
+*Supplier Cockpit with demonstration supplier and task data.*
+
 ## Make an Account available
 
 An Account must meet both conditions:

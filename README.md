@@ -8,6 +8,8 @@ Microsoft Supplier IQ is an AI-powered procurement and supplier management solut
 
 This repository contains the public product and deployment documentation. It also provides the current unmanaged solution package and a sample workbook for the Prompt Catalog.
 
+![Supplier IQ Get Started experience](docs/assets/screenshots/get-started.png)
+
 ## Documentation
 
 - [Prerequisites](docs/getting-started/prerequisites.md)
