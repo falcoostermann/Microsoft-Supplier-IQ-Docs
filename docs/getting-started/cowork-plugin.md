@@ -49,7 +49,7 @@ Environment selection remains on the existing Microsoft connection. The actual r
 
 Before installing the plugin, confirm that:
 
-1. The [Microsoft Supplier IQ solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip) is installed in the target Dataverse environment.
+1. The [Microsoft Supplier IQ solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip) is installed in the target Dataverse environment.
 2. The user can access the required Supplier IQ records and Prompt Catalog rows.
 3. Microsoft Copilot Cowork and custom plugin packages are enabled for the tenant.
 4. An existing Microsoft data connection is available in Cowork and can access the selected Dataverse environment.

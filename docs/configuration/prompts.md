@@ -66,7 +66,7 @@ Do not store the selected supplier name back in the canonical Dataverse prompt r
 
 ## Import the sample workbook
 
-Download [Supplier-IQ-Standard-Prompts.xlsx](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/Supplier-IQ-Standard-Prompts.xlsx).
+Download [Supplier-IQ-Standard-Prompts.xlsx](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Supplier-IQ-Standard-Prompts.xlsx).
 
 1. Open **Tables > Supplier IQ Prompt**.
 2. Select **Import > Import data from Excel**.

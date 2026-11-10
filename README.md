@@ -40,8 +40,8 @@ This repository contains the public product and deployment documentation. It pro
 
 ## Downloads
 
-- [Microsoft Supplier IQ unmanaged solution](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/MicrosoftSupplierIQ_1_0_0_0_unmanaged.zip) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/solution-v1.0.0.0) and [installation](docs/getting-started/installation.md#2-import-the-solution)
-- [Sample Prompt Catalog workbook](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.0.0/Supplier-IQ-Standard-Prompts.xlsx) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/solution-v1.0.0.0) and [import instructions](docs/getting-started/installation.md#6-seed-the-prompt-catalog)
+- [Microsoft Supplier IQ unmanaged solution 1.0.1.0](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/MicrosoftSupplierIQ_1_0_1_0_unmanaged.zip) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/solution-v1.0.1.0) and [installation](docs/getting-started/installation.md#2-import-the-solution)
+- [Sample Prompt Catalog workbook](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Supplier-IQ-Standard-Prompts.xlsx) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/solution-v1.0.1.0) and [import instructions](docs/getting-started/installation.md#6-seed-the-prompt-catalog)
 - [Supplier IQ Cowork plugin 1.1.0](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/cowork-v1.1.0/MicrosoftSupplierIQ_Cowork_1_1_0.zip) - [release notes](https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/tag/cowork-v1.1.0) and [installation](docs/getting-started/cowork-plugin.md)
 
 The downloadable solution is an unmanaged development and pilot baseline. Create a managed release and complete environment-specific hardening before a production rollout.
