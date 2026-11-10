@@ -388,6 +388,97 @@ pre {
   margin-top: 1rem;
 }
 
+.md-content img.siq-zoomable {
+  cursor: zoom-in;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.md-content img.siq-zoomable:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.md-content img.siq-zoomable:focus-visible {
+  outline: 3px solid var(--cp-accent);
+  outline-offset: 4px;
+}
+
+.siq-lightbox {
+  width: min(96vw, 100rem);
+  max-width: none;
+  max-height: 96vh;
+  padding: 0;
+  color: var(--cp-text);
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+}
+
+.siq-lightbox::backdrop {
+  background: var(--cp-overlay);
+  backdrop-filter: blur(12px);
+}
+
+.siq-lightbox__frame {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.siq-lightbox__image {
+  display: block;
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  background: var(--cp-surface-soft);
+  border-radius: 0.625rem;
+}
+
+.siq-lightbox__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.siq-lightbox__caption {
+  margin: 0;
+  color: var(--cp-text-muted);
+}
+
+.siq-lightbox__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.siq-lightbox__link,
+.siq-lightbox__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  color: var(--cp-text);
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 0.625rem;
+  font: inherit;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.siq-lightbox__link:hover,
+.siq-lightbox__close:hover {
+  color: var(--cp-accent);
+  background: var(--cp-accent-soft);
+  border-color: var(--cp-accent);
+}
+
 @media screen and (max-width: 60rem) {
   .siq-grid,
   .siq-showcase,
@@ -398,5 +489,28 @@ pre {
   .siq-hero {
     min-height: auto;
     padding: 1rem;
+  }
+
+  .siq-lightbox {
+    width: calc(100vw - 1.5rem);
+    max-width: calc(100vw - 1.5rem);
+    max-height: 98vh;
+  }
+
+  .siq-lightbox__frame {
+    padding: 0.75rem;
+  }
+
+  .siq-lightbox__image {
+    max-height: 76vh;
+  }
+
+  .siq-lightbox__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .siq-lightbox__actions {
+    justify-content: flex-end;
   }
 }
