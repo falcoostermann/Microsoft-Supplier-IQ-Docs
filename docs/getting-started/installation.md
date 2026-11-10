@@ -92,3 +92,7 @@ Assign **Supplier IQ User** to all users. Assign the supplemental **Supplier IQ 
 6. Generate Supplier Insights and verify the cache status.
 7. Open a prompt, select a supplier, and confirm the prepared prompt.
 8. Verify scheduled reminders and required SharePoint output.
+
+## Optional Cowork plugin
+
+Install the separate [Supplier IQ Cowork plugin 1.1.0](cowork-plugin.md) to use supplier skills and the Inbox Email Tracker in Microsoft Copilot Cowork. It uses an existing authorized Microsoft connection and requires its own app-package installation and acceptance tests; it is not included in the Dataverse solution import above.
