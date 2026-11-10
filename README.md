@@ -6,6 +6,14 @@
 
 Microsoft Supplier IQ is an AI-powered procurement and supplier management solution built with Dynamics 365, Microsoft Power Platform, and Microsoft 365 Copilot.
 
+<p align="center">
+  <a href="https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Microsoft-Supplier-IQ-Overview.mp4">
+    <img src="docs/assets/images/supplier-iq-overview.png" alt="Watch the Microsoft Supplier IQ overview" width="900">
+  </a>
+  <br>
+  <strong><a href="https://github.com/falcoostermann/Microsoft-Supplier-IQ-Docs/releases/download/solution-v1.0.1.0/Microsoft-Supplier-IQ-Overview.mp4">Watch the 90-second Microsoft Supplier IQ overview</a></strong>
+</p>
+
 This repository contains the public product and deployment documentation. It provides the unmanaged solution package, a sample Prompt Catalog workbook, and a separately packaged Supplier IQ Cowork plugin.
 
 ![Supplier IQ Get Started experience](docs/assets/screenshots/get-started.png)
